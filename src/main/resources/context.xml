@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="Car" class="Car">
+        <constructor-arg ref="PirelliWheel"/>
+        <constructor-arg ref="EngineV12"/>
+    </bean>
+
+    <bean id="PirelliWheel" class="components.impl.Pirelli"/>
+    <bean id="EngineV6" class="components.impl.EngineV6"/>
+    <bean id="EngineV12" class="components.impl.EngineV12"/>
+</beans>
