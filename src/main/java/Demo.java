@@ -13,8 +13,14 @@ public class Demo {
         Car car1 = (Car)context.getBean("ColoredCar");
         car1.getInfo();
 
-        Car car2 = (Car)context.getBean("Car");
+        Car car2 = (Car)context.getBean("ColoredCar");
         car2.getInfo();
+
+        Car car3 = (Car)context.getBean("Car");
+        car3.getInfo();
+
+        Car car4 = (Car)context.getBean("Car");
+        car4.getInfo();
     }
 
 }

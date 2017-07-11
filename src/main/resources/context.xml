@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="Car" class="Car">
+    <bean id="Car" class="Car" scope="singleton">
         <constructor-arg ref="PirelliWheel" index="0"/>
         <constructor-arg ref="EngineV12" index="1"/>
     </bean>
 
-    <bean id="ColoredCar" class="Car">
-        <constructor-arg value="red"/>
-
-        <property name="Wheel" ref="PirelliWheel"/>
-        <property name="Engine" ref="EngineV6"/>
+    <bean id="ColoredCar" class="Car" p:wheel-ref="PirelliWheel" p:engine-ref="EngineV6" scope="prototype">
+        <constructor-arg value="red" type="String"/>
     </bean>
 
-    <bean id="PirelliWheel" class="components.impl.Pirelli"/>
-    <bean id="EngineV6" class="components.impl.EngineV6"/>
-    <bean id="EngineV12" class="components.impl.EngineV12"/>
+    <bean id="PirelliWheel" class="components.impl.Pirelli" scope="prototype"/>
+    <bean id="EngineV6" class="components.impl.EngineV6" scope="prototype"/>
+    <bean id="EngineV12" class="components.impl.EngineV12" scope="prototype"/>
 </beans>

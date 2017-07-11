@@ -20,6 +20,7 @@ public class Car {
     }
 
     public void getInfo() {
+        System.out.println(this);
         wheel.getInfo();
         engine.getInfo();
         if(color != null) {
