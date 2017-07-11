@@ -4,14 +4,15 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="Car" class="Car">
-        <constructor-arg ref="PirelliWheel"/>
-        <constructor-arg ref="EngineV12"/>
+        <constructor-arg ref="PirelliWheel" index="0"/>
+        <constructor-arg ref="EngineV12" index="1"/>
     </bean>
 
     <bean id="ColoredCar" class="Car">
-        <constructor-arg ref="PirelliWheel"/>
-        <constructor-arg ref="EngineV6"/>
         <constructor-arg value="red"/>
+
+        <property name="Wheel" ref="PirelliWheel"/>
+        <property name="Engine" ref="EngineV6"/>
     </bean>
 
     <bean id="PirelliWheel" class="components.impl.Pirelli"/>

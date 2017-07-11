@@ -15,9 +15,7 @@ public class Car {
         this.engine = engine;
     }
 
-    public Car(Wheel wheel, Engine engine, String color) {
-        this.wheel = wheel;
-        this.engine = engine;
+    public Car(String color) {
         this.color = color;
     }
 
@@ -29,4 +27,11 @@ public class Car {
         }
     }
 
+    public void setWheel(Wheel wheel) {
+        this.wheel = wheel;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
 }
