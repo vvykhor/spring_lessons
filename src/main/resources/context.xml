@@ -8,6 +8,12 @@
         <constructor-arg ref="EngineV12"/>
     </bean>
 
+    <bean id="ColoredCar" class="Car">
+        <constructor-arg ref="PirelliWheel"/>
+        <constructor-arg ref="EngineV6"/>
+        <constructor-arg value="red"/>
+    </bean>
+
     <bean id="PirelliWheel" class="components.impl.Pirelli"/>
     <bean id="EngineV6" class="components.impl.EngineV6"/>
     <bean id="EngineV12" class="components.impl.EngineV12"/>
