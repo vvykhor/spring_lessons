@@ -35,4 +35,12 @@ public class Car {
     public void setEngine(Engine engine) {
         this.engine = engine;
     }
+
+    public void initObject() {
+        System.out.println("init");
+    }
+
+    public void destroyObject() {
+        System.out.println("destroy");
+    }
 }
