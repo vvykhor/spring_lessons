@@ -4,20 +4,21 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-init-method="initObject"
-       default-destroy-method="destroyObject">
+       default-destroy-method="destroyObject"
+       default-lazy-init="true">
 
-    <bean id="Car" class="Car" scope="singleton"
-        init-method="initObject"
-        destroy-method="destroyObject">
+    <bean id="Volvo" class="cars.models.Volvo" scope="singleton"
+          init-method="initObject"
+          destroy-method="destroyObject">
         <constructor-arg ref="PirelliWheel" index="0"/>
         <constructor-arg ref="EngineV12" index="1"/>
     </bean>
 
-    <bean id="ColoredCar" class="Car" p:wheel-ref="PirelliWheel" p:engine-ref="EngineV6" scope="prototype">
+    <bean id="ColoredVolvo" class="cars.models.Volvo" p:wheel-ref="PirelliWheel" p:engine-ref="EngineV6" scope="prototype">
         <constructor-arg value="red" type="String"/>
     </bean>
 
-    <bean id="PirelliWheel" class="components.impl.Pirelli" scope="prototype"/>
-    <bean id="EngineV6" class="components.impl.EngineV6" scope="prototype"/>
-    <bean id="EngineV12" class="components.impl.EngineV12" scope="prototype"/>
+    <bean id="PirelliWheel" class="cars.components.impl.Pirelli" scope="prototype" lazy-init="false"/>
+    <bean id="EngineV6" class="cars.components.impl.EngineV6" scope="prototype" lazy-init="false"/>
+    <bean id="EngineV12" class="cars.components.impl.EngineV12" scope="prototype" lazy-init="false"/>
 </beans>

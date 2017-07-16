@@ -1,21 +1,24 @@
-import components.Engine;
-import components.Wheel;
+package cars.models;
+
+import cars.Car;
+import cars.components.Engine;
+import cars.components.Wheel;
 
 /**
  * Created by vykhor on 04.07.17.
  */
-public class Car {
+public class Volvo implements Car {
 
     private String color;
     private Wheel wheel;
     private Engine engine;
 
-    public Car(Wheel wheel, Engine engine) {
+    public Volvo(Wheel wheel, Engine engine) {
         this.wheel = wheel;
         this.engine = engine;
     }
 
-    public Car(String color) {
+    public Volvo(String color) {
         this.color = color;
     }
 
